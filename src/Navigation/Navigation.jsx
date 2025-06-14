@@ -1,6 +1,8 @@
 import React from 'react'
 import Carousel from '../Pages/Carousel'
 import ServiceData from '../Pages/ServiceData'
+import BestSales from '../Pages/BestSales'
+import NewArrivals from '../Pages/NewArrivals'
 
 
 export default function Navigation() {
@@ -8,9 +10,9 @@ export default function Navigation() {
     <div>
             <Carousel/>
             <ServiceData/>
-            {/* <BigDiscount/>
+            <BigDiscount/>
             <NewArrivals/>
-            <BestSales/> */}
+            <BestSales/>
     </div>
   )
 }
