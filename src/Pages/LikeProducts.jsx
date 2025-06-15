@@ -42,8 +42,7 @@ export default function ProductDetails() {
           <p className="text-center text-gray-600">No similar products found.</p>
         ) : (
           chunked.map((group, index) => {
-            const isLastRow = index === chunked.length - 1;
-            const useFlex = isLastRow && group.length < 3;
+            const useFlex = index === chunked.length - 1 && group.length < 3;
 
             return (
               <div

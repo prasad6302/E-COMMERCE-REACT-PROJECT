@@ -15,7 +15,7 @@ export default function Header() {
             </Link>
             <div className='flex flex-wrap items-center cursor-pointer text-xl sm:text-2xl md:text-3xl space-x-4 sm:space-x-6 md:space-x-10 mt-4 md:mt-0'>           
                 <Link to="/"><h3>Home</h3></Link>
-                <h3>Shop</h3>
+                <Link to='/shop'><h3>Shop</h3></Link>
                 <h3>Cart</h3>
                 <h3><CgProfile /></h3>
                 <h3><FaShoppingCart /></h3>
