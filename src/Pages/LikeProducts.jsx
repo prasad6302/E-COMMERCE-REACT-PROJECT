@@ -2,11 +2,15 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { globalContext } from '../MyContext/MyContext';
 import { FaPlus } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../ReduxToolKit-Store/productSlice';
+import { toast } from 'react-toastify';
 
 export default function ProductDetails() {
   const { id } = useParams();
   const [productInfo, setProductInfo] = useState(null);
   const { data } = useContext(globalContext);
+    const dispatch =useDispatch();
 
   useEffect(() => {
     if (data && data.length > 0) {
@@ -76,7 +80,7 @@ export default function ProductDetails() {
 
                     <div className="flex items-center justify-between mt-auto">
                       <p className="text-xl font-bold text-gray-900">${product.price}</p>
-                      <button className="bg-gray-200 p-2 rounded-full hover:bg-blue-600 hover:text-white transition">
+                      <button className="bg-gray-200 p-2 rounded-full hover:bg-blue-600 hover:text-white transition" onClick={()=>{dispatch(addToCart(product));toast.success("Your cart is added successfully")}}>
                         <FaPlus />
                       </button>
                     </div>

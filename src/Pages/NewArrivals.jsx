@@ -3,10 +3,14 @@ import { useContext } from 'react'
 import { globalContext } from '../MyContext/MyContext'
 import { FaPlus } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../ReduxToolKit-Store/productSlice'
+import { toast } from 'react-toastify';
 
 export default function NewArrivals() {
     const { data } = useContext(globalContext)
     const filter = data.filter(item => item.category === 'mobile' || item.category === 'wireless')
+      const dispatch =useDispatch();
 
     const chunked = [];
     for (let i = 0; i < filter.length; i += 3) {
@@ -54,7 +58,7 @@ export default function NewArrivals() {
 
                                     <div className="flex items-center justify-between mt-auto">
                                         <p className="text-xl font-bold text-gray-900">${product.price}</p>
-                                        <button className="bg-gray-200 p-2 rounded-full hover:bg-blue-600 hover:text-white transition" >
+                                        <button className="bg-gray-200 p-2 rounded-full hover:bg-blue-600 hover:text-white transition" onClick={()=>{dispatch(addToCart(product));toast.success("Your cart is added successfully")}}>
                                             <FaPlus />
                                         </button>
                                     </div>

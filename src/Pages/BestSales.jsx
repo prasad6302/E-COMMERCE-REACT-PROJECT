@@ -2,10 +2,14 @@ import React, { useContext } from "react";
 import { globalContext } from "../MyContext/MyContext";
 import { FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../ReduxToolKit-Store/productSlice";
+import { toast } from 'react-toastify';
 
 export default function BestSales() {
     const { data } = useContext(globalContext);
     const sofas = data.filter(item => item.category === 'sofa');
+  const dispatch =useDispatch();
 
     const chunked = [];
     for (let i = 0; i < sofas.length; i += 3) {
@@ -54,7 +58,7 @@ export default function BestSales() {
 
                                     <div className="flex items-center justify-between mt-auto">
                                         <p className="text-xl font-bold text-gray-900">${product.price}</p>
-                                        <button className="bg-gray-200 p-2 rounded-full hover:bg-blue-600 hover:text-white transition">
+                                        <button className="bg-gray-200 p-2 rounded-full hover:bg-blue-600 hover:text-white transition" onClick={()=>{dispatch(addToCart(product));toast.success("Your cart is added successfully")}}>
                                             <FaPlus />
                                         </button>
                                     </div>

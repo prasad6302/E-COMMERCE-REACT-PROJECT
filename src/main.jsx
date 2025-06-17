@@ -4,12 +4,16 @@ import './index.css'
 import App from './App.jsx'
 import MyContext from './MyContext/MyContext.jsx'
 import { BrowserRouter } from 'react-router-dom'
-
+import {Provider} from 'react-redux'
+import { store } from './ReduxToolKit-Store/store.js'
 createRoot(document.getElementById('root')).render(
   
   <MyContext>
 <BrowserRouter>
+<Provider store={store}>
 <App/>
+
+</Provider>
 </BrowserRouter>
   </MyContext>
 

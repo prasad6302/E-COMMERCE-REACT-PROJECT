@@ -8,6 +8,7 @@ import { Route, Routes } from 'react-router-dom'
 import Home from '../Pages/Home'
 import ProductConcat from '../Pages/ProductConcat'
 import Shop from '../Pages/Shop'
+import CartPage from '../Pages/CartPage'
 
 
 export default function Navigation() {
@@ -18,6 +19,7 @@ export default function Navigation() {
             <Route path="/" element={<Home/>}/>
             <Route path='/:id' element={<ProductConcat/>}/>
             <Route path='/shop' element={<Shop/>}/>
+            <Route path='/cart' element={<CartPage/>}/>
       </Routes>
 
     </div>

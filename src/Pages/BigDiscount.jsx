@@ -2,9 +2,12 @@ import React, { useContext } from 'react';
 import { globalContext } from '../MyContext/MyContext';
 import { FaPlus } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../ReduxToolKit-Store/productSlice';
+import { toast } from 'react-toastify';
 export default function BigDiscount() {
   const { discountData } = useContext(globalContext);
+  const dispatch =useDispatch();
 
   return (
  <div className="w-full bg-blue-50 py-10 px-4">
@@ -44,7 +47,7 @@ export default function BigDiscount() {
         {/* Price and Button at Bottom */}
         <div className="flex items-center justify-between mt-auto">
           <p className="text-xl font-bold text-gray-900">${product.price}</p>
-          <button className="bg-gray-200 p-2 rounded-full hover:bg-blue-600 hover:text-white transition">
+          <button className="bg-gray-200 p-2 rounded-full hover:bg-blue-600 hover:text-white transition" onClick={()=>{dispatch(addToCart(product));toast.success("Your cart is added successfully")}}>
             <FaPlus />
           </button>
         </div>
