@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { FiX } from "react-icons/fi";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { removeFromCart, increaseQty, decreaseQty } from '../ReduxToolKit-Store/productSlice'
-
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 export default function CartPage() {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cartItems.cart);
@@ -21,9 +22,19 @@ export default function CartPage() {
       {/* Cart Items */}
       <div className="flex-1 space-y-6 max-w-full xl:max-w-[950px] 2xl:max-w-[1100px] mx-auto">
         {cartItems.length === 0 ? (
-  <div className="text-center text-blue-500 text-4xl font-bold py-10">
-    Your cart is empty
+  <div>
+   <h1 className="text-center text-blue-500 text-4xl font-bold py-10">Your cart is empty</h1>
+<div className="w-full flex justify-center mt-10">
+  <Link to="/">
+    <button className="bg-green-50 border text-4xl flex items-center gap-5 font-bold py-4 px-8">
+      <FaArrowLeftLong />
+      Continue Shopping
+    </button>
+  </Link>
+</div>
+
   </div>
+
 ) : (
   cartItems.map((item) => (
     <div
