@@ -14,7 +14,25 @@ const sliceProducts = createSlice({
         state.cart.push({ ...action.payload, quantity: quantity || 1 });
       }
     },
+    removeFromCart: (state, action) => {
+      state.cart = state.cart.filter((item) => item.id !== action.payload.id);
+    },
 
+    increaseQty: (state, action) => {
+      const item = state.cart.find((item) => item.id === action.payload.id);
+      if (item) {
+        item.quantity += 1;
+      }
+    },
+
+    decreaseQty: (state, action) => {
+      const index = state.cart.findIndex(item => item.id === action.payload.id);
+      if (index !== -1 && state.cart[index].quantity > 1) {
+        state.cart[index].quantity -= 1;
+      } else {
+        state.cart.splice(index, 1);
+      }
+    }
 
   },
 });
