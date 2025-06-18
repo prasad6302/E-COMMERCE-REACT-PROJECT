@@ -58,7 +58,7 @@ export default function BestSales() {
 
                                     <div className="flex items-center justify-between mt-auto">
                                         <p className="text-xl font-bold text-gray-900">${product.price}</p>
-                                        <button className="bg-gray-200 p-2 rounded-full hover:bg-blue-600 hover:text-white transition" onClick={()=>{dispatch(addToCart(product));toast.success("Your cart is added successfully")}}>
+                                        <button className="bg-gray-200 p-2 rounded-full hover:bg-blue-600 hover:text-white transition" onClick={()=>{dispatch(addToCart(product));toast.success("Product has been added to cart")}}>
                                             <FaPlus />
                                         </button>
                                     </div>
