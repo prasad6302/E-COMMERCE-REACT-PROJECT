@@ -4,7 +4,7 @@ import { globalContext } from '../MyContext/MyContext';
 import image from '../assets/table.jpg'
 import { addToCart } from '../ReduxToolKit-Store/productSlice';
 import { useDispatch } from 'react-redux';
-import { toast } from 'react-toastify'; // ✅ Import toast
+import { toast } from 'react-toastify'; 
 
 export default function ProductDetails() {
   const { id } = useParams();

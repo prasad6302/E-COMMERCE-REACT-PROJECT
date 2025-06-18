@@ -1,5 +1,3 @@
-// src/ReduxToolKit-Store/productSlice.js
-
 import { createSlice } from '@reduxjs/toolkit';
 
 // Load cart from localStorage

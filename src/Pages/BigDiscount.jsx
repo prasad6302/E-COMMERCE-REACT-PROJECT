@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../ReduxToolKit-Store/productSlice';
 import { toast } from 'react-toastify';
+
 export default function BigDiscount() {
   const { discountData } = useContext(globalContext);
   const dispatch =useDispatch();
@@ -20,11 +21,11 @@ export default function BigDiscount() {
         key={product.id}
         className="flex flex-col h-full bg-white rounded-xl p-5 shadow-md hover:shadow-lg transition duration-300 relative"
       >
+
         {/* Discount badge */}
         <span className="absolute top-4 left-4 bg-blue-900 text-white text-xs font-semibold px-3 py-1 rounded-full z-10">
           {product.discount}% Off
         </span>
-
         {/* Image Box */}
         <div className="w-full h-[250px] flex items-center justify-center mb-4 mt-6">
           <Link to={`/${product.id}`}>

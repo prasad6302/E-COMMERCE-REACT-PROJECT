@@ -22,7 +22,7 @@ export default function Carousel() {
                         <div className="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 py-8">
                             <div className="w-full md:w-1/2 space-y-6 text-center md:text-left">
 
-                                <h2 className="text-3xl md:text-5xl font-bold">{item.title}</h2>
+                                <h2 className="text-3xl md:text-7xl font-bold">{item.title}</h2>
                                 <p className="text-gray-600 text-base md:text-lg">{item.desc}</p>
                                 <button className=" text-black font-bold px-6 py-3 hover:bg-gray-200">
                                     Visit Collections
