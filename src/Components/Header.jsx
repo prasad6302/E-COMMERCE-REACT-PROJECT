@@ -21,7 +21,7 @@ export default function Header() {
                 <Link to='/shop'><h3>Shop</h3></Link>
                 <Link to='/cart'><h3>Cart</h3></Link>
                 <h3><CgProfile /></h3>
-                <Link to='/cart'><h3><FaShoppingCart /><span className="absolute top-0 right-3 bg-blue-900 text-white text-xs w-7 h-7 flex items-center justify-center rounded-full">{uniqueCount}</span></h3></Link>
+                <Link to='/cart'><h3><FaShoppingCart /><span className="absolute top-0 right-7 bg-blue-900 text-white text-xs w-7 h-7 flex items-center justify-center rounded-full">{uniqueCount}</span></h3></Link>
             </div>
 
         </div>
