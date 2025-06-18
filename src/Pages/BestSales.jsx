@@ -10,7 +10,7 @@ export default function BestSales() {
     const { data } = useContext(globalContext);
     const sofas = data.filter(item => item.category === 'sofa');
   const dispatch =useDispatch();
-
+//when there is a lessthan 3 products in a row it will be in middle
     const chunked = [];
     for (let i = 0; i < sofas.length; i += 3) {
         chunked.push(sofas.slice(i, i + 3));

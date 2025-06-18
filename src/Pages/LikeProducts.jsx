@@ -14,7 +14,7 @@ export default function ProductDetails() {
 
   useEffect(() => {
     if (data && data.length > 0) {
-      const foundProduct = data.find((product) => product.id == id); // Loose comparison handles number/string mismatch
+      const foundProduct = data.find((product) => product.id == id);
       setProductInfo(foundProduct);
     }
   }, [id, data]);
